@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>Masqueuerade | Hear other Soundcloud user's streams</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+	<script src="http://connect.soundcloud.com/sdk.js"></script>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<form id="form-user-search" method="GET" action="">
+		<input id="input-user" name="user" placeholder="User to Masqueuerade" />
+		<input type="submit" value="SEARCH" />
+		<div id="loading" style="display:none">LOADING</div>
+	</form>
+	
+	<div id="display-users">
+		
+	</div>
+	
+	<div id="display-tracks">
+		
+	</div>
+</body>
+</html>

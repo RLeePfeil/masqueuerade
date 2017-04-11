@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="masqueuerade">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>Masqueuerade | Hear other Soundcloud user's streams</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+	<script src="http://connect.soundcloud.com/sdk.js"></script>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-controller="MasqueueradeController as controller">
+	<form id="form-user-search" ng-submit="controller.searchUser(controller.userField) && false">
+		<input id="input-user" name="user" ng-model="controller.userField" placeholder="User to Masqueuerade" />
+		<input type="submit" value="SEARCH" />
+	</form>
+	
+	<div id="loading" style="display:none">LOADING</div>
+	
+	<div id="display-users" ng-show="controller.users" ng-hide="controller.tracks">
+		<a href="" ng-repeat="user in controller.users">
+			<img ng-src="{{user.avatar_url}}" alt="" />
+			<span>{{user.username}}</span>
+		</a>
+	</div>
+	
+	<div id="display-tracks" ng-show="controller.tracks">
+		<a href="#play-track" ng-repeat="track in controller.tracks">
+			<img ng-src="{{track.artwork_url}}" alt="" />
+		</a>
+	</div>
+</body>
+</html>
